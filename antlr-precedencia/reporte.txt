@@ -1,0 +1,50 @@
+== Pruebas de Precedencia y Asociatividad ==
+
+INPUT: 2+3*4
+GRAMMAR: ExprStd (* > +)
+INPUT  : 2+3*4
+RESULT : 14
+GRAMMAR: ExprAlt (+ > *)
+INPUT  : 2+3*4
+RESULT : 20
+
+INPUT: (2+3)*4
+GRAMMAR: ExprStd (* > +)
+INPUT  : (2+3)*4
+RESULT : 20
+GRAMMAR: ExprAlt (+ > *)
+INPUT  : (2+3)*4
+RESULT : 20
+
+INPUT: 100-10-5
+GRAMMAR: ExprStd (* > +)
+INPUT  : 100-10-5
+RESULT : 85
+GRAMMAR: ExprAlt (+ > *)
+INPUT  : 100-10-5
+RESULT : 85
+
+INPUT: 8/2/2
+GRAMMAR: ExprStd (* > +)
+INPUT  : 8/2/2
+RESULT : 2
+GRAMMAR: ExprAlt (+ > *)
+INPUT  : 8/2/2
+RESULT : 2
+
+INPUT: 7+4*2-6
+GRAMMAR: ExprStd (* > +)
+INPUT  : 7+4*2-6
+RESULT : 9
+GRAMMAR: ExprAlt (+ > *)
+INPUT  : 7+4*2-6
+RESULT : -44
+
+INPUT: 10-3*2+1
+GRAMMAR: ExprStd (* > +)
+INPUT  : 10-3*2+1
+RESULT : 5
+GRAMMAR: ExprAlt (+ > *)
+INPUT  : 10-3*2+1
+RESULT : 21
+
